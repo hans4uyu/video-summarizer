@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  app:
+    build: .
+    container_name: video-summarizer
+    ports:
+      - "8501:8501"
+    env_file:
+      - .env
+    volumes:
+      - ./sample_videos:/app/sample_videos:ro
+    deploy:
+      resources:
+        limits:
+          cpus: "2"
+          memory: 2g

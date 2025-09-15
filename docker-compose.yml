@@ -2,14 +2,15 @@ version: "3.9"
 
 services:
   app:
-    build: .
-    container_name: video-summarizer
+    build: .                          # Build dari Dockerfile di folder ini
+    container_name: video-summarizer  # Nama container
     ports:
-      - "8501:8501"
+      - "8501:8501"                   # Akses di http://localhost:8501
     env_file:
-      - .env
+      - .env                          # Inject API key dari file .env
     volumes:
-      - ./sample_videos:/app/sample_videos:ro
+      - .:/app                        # Mount semua kode → Streamlit auto-reload
+      - ./sample_videos:/app/sample_videos:ro   # Video contoh (read-only)
     deploy:
       resources:
         limits:

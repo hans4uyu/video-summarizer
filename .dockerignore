@@ -1,0 +1,8 @@
+# Jangan bawa API key ke dalam image
+.env
+
+# Jangan bawa file video contoh (biar image gak bengkak)
+sample_videos/
+
+# Jangan bawa cache Python
+__pycache__/

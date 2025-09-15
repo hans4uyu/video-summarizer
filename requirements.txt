@@ -2,3 +2,7 @@ openai
 streamlit
 ffmpeg-python
 python-dotenv
+yt-dlp
+openai-whisper
+torch
+torchaudio
